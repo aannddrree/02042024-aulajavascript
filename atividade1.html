@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+</head>
+<body>
+    <h2>Calculadora Básica</h2>
+    <input type="number" id="num1">
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" id="num2">
+    <button onclick="calcular()">Calcular</button>
+    <p id="resultado"></p>
+
+    <script>
+        // Função para realizar o cálculo
+        function calcular() {
+            // Obter os valores dos campos de entrada
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var operador = document.getElementById('operator').value;
+            var resultado;
+
+            // Realizar o cálculo com base no operador selecionado
+            switch (operador) {
+                case '+':
+                    resultado = num1 + num2;
+                    break;
+                case '-':
+                    resultado = num1 - num2;
+                    break;
+                case '*':
+                    resultado = num1 * num2;
+                    break;
+                case '/':
+                    resultado = num1 / num2;
+                    break;
+                default:
+                    resultado = "Operação inválida";
+            }
+
+            // Exibir o resultado na página
+            document.getElementById('resultado').innerHTML = "Resultado: " + resultado;
+        }
+    </script>
+</body>
+</html>
